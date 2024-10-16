@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "BwosLJZU5qT2hjA9NdIX9KBcatBkUe1Y7fFAVeUorNs4P5KvkbgWKZ9Ag45p8FngKxz+qs1/PBuoYOx4FZ5y0A==",
+  "dgSpecHash": "pM8yMskqdQaq4Fufr1wyOaa1Krfj4REaX5Gw4IfqjYntgYk88sj7tnVc5V41LomAf8tku0dT02T3DWRhIBry1Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\11049921\\source\\repos\\EcommerceAPI\\EcommerceAPI.csproj",
+  "projectFilePath": "D:\\EcommerceAPI\\EcommerceAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\11049921\\.nuget\\packages\\entityframework\\6.5.1\\entityframework.6.5.1.nupkg.sha512",
     "C:\\Users\\11049921\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",

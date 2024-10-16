@@ -11787,11 +11787,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\11049921\\source\\repos\\EcommerceAPI\\EcommerceAPI.csproj",
+      "projectUniqueName": "D:\\EcommerceAPI\\EcommerceAPI.csproj",
       "projectName": "EcommerceAPI",
-      "projectPath": "C:\\Users\\11049921\\source\\repos\\EcommerceAPI\\EcommerceAPI.csproj",
+      "projectPath": "D:\\EcommerceAPI\\EcommerceAPI.csproj",
       "packagesPath": "C:\\Users\\11049921\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\11049921\\source\\repos\\EcommerceAPI\\obj\\",
+      "outputPath": "D:\\EcommerceAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\11049921\\AppData\\Roaming\\NuGet\\NuGet.Config",
