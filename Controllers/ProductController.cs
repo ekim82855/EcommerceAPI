@@ -20,15 +20,28 @@ namespace EcommerceAPI.Controllers
             _context = context;
         }
 
-        // GET: api/Product
+        // GET: api/Product/GetAllProducts
+        [Route("GetAllProducts")]
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Product>>> GetProduct()
+        public ActionResult<IEnumerable<Product>> GetProduct()
         {
           if (_context.Product == null)
           {
               return NotFound();
           }
-            return await _context.Product.ToListAsync();
+          return _context.Product.ToList();
+        }
+
+        // GET: api/Product/GetAllProductsByCategoryID
+        [Route("GetAllProductsByCategoryID")]
+        [HttpGet]
+        public ActionResult<IEnumerable<Product>> GetAllProductsByCategoryID(int categoryID)
+        {
+            if (_context.Product == null)
+            {
+                return NotFound();
+            }
+            return _context.Product.Where(p => p.CategoryId == categoryID).ToList();
         }
 
         // GET: api/Product/5

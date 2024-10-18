@@ -20,7 +20,8 @@ namespace EcommerceAPI.Controllers
             _context = context;
         }
 
-        // GET: api/Order
+        // GET: api/Order/GetAllOrders
+        [Route("GetAllOrders")]
         [HttpGet]
         public ActionResult<IEnumerable<Order>> GetOrder()
         {

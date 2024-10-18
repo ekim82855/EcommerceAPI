@@ -55,5 +55,7 @@ namespace EcommerceAPI.Models
         partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
 
         public DbSet<EcommerceAPI.Models.Product>? Product { get; set; }
+
+        public DbSet<EcommerceAPI.Models.Category>? Category { get; set; }
     }
 }
