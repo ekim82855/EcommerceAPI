@@ -11,35 +11,35 @@ namespace EcommerceAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class OrdersController : ControllerBase
+    public class OrderController : ControllerBase
     {
         private readonly EcommerceWebsiteContext _context;
 
-        public OrdersController(EcommerceWebsiteContext context)
+        public OrderController(EcommerceWebsiteContext context)
         {
             _context = context;
         }
 
-        // GET: api/Orders
+        // GET: api/Order
         [HttpGet]
         public ActionResult<IEnumerable<Order>> GetOrder()
         {
-            if (_context.Orders == null)
+            if (_context.Order == null)
             {
                 return NotFound();
             }
-            return _context.Orders.ToList();
+            return _context.Order.ToList();
         }
 
-        // GET: api/Orders/5
+        // GET: api/Order/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Order>> GetOrder(int id)
         {
-            if (_context.Orders == null)
+            if (_context.Order == null)
             {
                 return NotFound();
             }
-            var order = await _context.Orders.FindAsync(id);
+            var order = await _context.Order.FindAsync(id);
 
             if (order == null)
             {
@@ -49,7 +49,7 @@ namespace EcommerceAPI.Controllers
             return order;
         }
 
-        // PUT: api/Orders/5
+        // PUT: api/Order/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
         public async Task<IActionResult> PutOrder(int id, Order order)
@@ -80,36 +80,36 @@ namespace EcommerceAPI.Controllers
             return NoContent();
         }
 
-        // POST: api/Orders
+        // POST: api/Order
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
         public async Task<ActionResult<Order>> PostOrder(Order order)
         {
-            if (_context.Orders == null)
+            if (_context.Order == null)
             {
                 return Problem("Entity set 'EcommerceWebsiteContext.Order'  is null.");
             }
-            _context.Orders.Add(order);
+            _context.Order.Add(order);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetOrder", new { id = order.OrderId }, order);
         }
 
-        // DELETE: api/Orders/5
+        // DELETE: api/Order/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteOrder(int id)
         {
-            if (_context.Orders == null)
+            if (_context.Order == null)
             {
                 return NotFound();
             }
-            var order = await _context.Orders.FindAsync(id);
+            var order = await _context.Order.FindAsync(id);
             if (order == null)
             {
                 return NotFound();
             }
 
-            _context.Orders.Remove(order);
+            _context.Order.Remove(order);
             await _context.SaveChangesAsync();
 
             return NoContent();
@@ -117,7 +117,7 @@ namespace EcommerceAPI.Controllers
 
         private bool OrderExists(int id)
         {
-            return (_context.Orders?.Any(e => e.OrderId == id)).GetValueOrDefault();
+            return (_context.Order?.Any(e => e.OrderId == id)).GetValueOrDefault();
         }
     }
 }

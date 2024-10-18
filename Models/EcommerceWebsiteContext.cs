@@ -17,8 +17,8 @@ namespace EcommerceAPI.Models
         {
         }
 
-        public virtual DbSet<Customer> Customers { get; set; } = null!;
-        public virtual DbSet<Order> Orders { get; set; } = null!;
+        public virtual DbSet<Customer> Customer { get; set; } = null!;
+        public virtual DbSet<Order> Order { get; set; } = null!;
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

@@ -11,35 +11,35 @@ namespace EcommerceAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class CustomersController : ControllerBase
+    public class CustomerController : ControllerBase
     {
         private readonly EcommerceWebsiteContext _context;
 
-        public CustomersController(EcommerceWebsiteContext context)
+        public CustomerController(EcommerceWebsiteContext context)
         {
             _context = context;
         }
 
-        // GET: api/Customers
+        // GET: api/Customer
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Customer>>> GetCustomers()
         {
-          if (_context.Customers == null)
+          if (_context.Customer == null)
           {
               return NotFound();
           }
-            return await _context.Customers.ToListAsync();
+            return await _context.Customer.ToListAsync();
         }
 
-        // GET: api/Customers/5
+        // GET: api/Customer/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Customer>> GetCustomer(int id)
         {
-          if (_context.Customers == null)
+          if (_context.Customer == null)
           {
               return NotFound();
           }
-            var customer = await _context.Customers.FindAsync(id);
+            var customer = await _context.Customer.FindAsync(id);
 
             if (customer == null)
             {
@@ -49,7 +49,7 @@ namespace EcommerceAPI.Controllers
             return customer;
         }
 
-        // PUT: api/Customers/5
+        // PUT: api/Customer/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
         public async Task<IActionResult> PutCustomer(int id, Customer customer)
@@ -80,16 +80,16 @@ namespace EcommerceAPI.Controllers
             return NoContent();
         }
 
-        // POST: api/Customers
+        // POST: api/Customer
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
         public async Task<ActionResult<Customer>> PostCustomer(Customer customer)
         {
-          if (_context.Customers == null)
+          if (_context.Customer == null)
           {
               return Problem("Entity set 'EcommerceWebsiteContext.Customers'  is null.");
           }
-            _context.Customers.Add(customer);
+            _context.Customer.Add(customer);
             try
             {
                 await _context.SaveChangesAsync();
@@ -109,21 +109,21 @@ namespace EcommerceAPI.Controllers
             return CreatedAtAction("GetCustomer", new { id = customer.CustomerId }, customer);
         }
 
-        // DELETE: api/Customers/5
+        // DELETE: api/Customer/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteCustomer(int id)
         {
-            if (_context.Customers == null)
+            if (_context.Customer == null)
             {
                 return NotFound();
             }
-            var customer = await _context.Customers.FindAsync(id);
+            var customer = await _context.Customer.FindAsync(id);
             if (customer == null)
             {
                 return NotFound();
             }
 
-            _context.Customers.Remove(customer);
+            _context.Customer.Remove(customer);
             await _context.SaveChangesAsync();
 
             return NoContent();
@@ -131,7 +131,7 @@ namespace EcommerceAPI.Controllers
 
         private bool CustomerExists(int id)
         {
-            return (_context.Customers?.Any(e => e.CustomerId == id)).GetValueOrDefault();
+            return (_context.Customer?.Any(e => e.CustomerId == id)).GetValueOrDefault();
         }
     }
 }
