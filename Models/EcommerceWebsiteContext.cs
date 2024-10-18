@@ -57,5 +57,7 @@ namespace EcommerceAPI.Models
         public DbSet<EcommerceAPI.Models.Product>? Product { get; set; }
 
         public DbSet<EcommerceAPI.Models.Category>? Category { get; set; }
+
+        public DbSet<EcommerceAPI.Models.User>? User { get; set; }
     }
 }
