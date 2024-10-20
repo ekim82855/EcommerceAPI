@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\EcommerceAPI\\EcommerceAPI.csproj": {}
+    "C:\\Users\\erick\\Source\\Repos\\EcommerceAPI\\EcommerceAPI.csproj": {}
   },
   "projects": {
-    "D:\\EcommerceAPI\\EcommerceAPI.csproj": {
+    "C:\\Users\\erick\\Source\\Repos\\EcommerceAPI\\EcommerceAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\EcommerceAPI\\EcommerceAPI.csproj",
+        "projectUniqueName": "C:\\Users\\erick\\Source\\Repos\\EcommerceAPI\\EcommerceAPI.csproj",
         "projectName": "EcommerceAPI",
-        "projectPath": "D:\\EcommerceAPI\\EcommerceAPI.csproj",
-        "packagesPath": "C:\\Users\\11049921\\.nuget\\packages\\",
-        "outputPath": "D:\\EcommerceAPI\\obj\\",
+        "projectPath": "C:\\Users\\erick\\Source\\Repos\\EcommerceAPI\\EcommerceAPI.csproj",
+        "packagesPath": "C:\\Users\\erick\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\erick\\Source\\Repos\\EcommerceAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\11049921\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\erick\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -34,6 +34,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -108,7 +113,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200\\RuntimeIdentifierGraph.json"
         }
       }
     }

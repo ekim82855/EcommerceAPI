@@ -8,9 +8,12 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
-builder.Services.AddDbContext<EcommerceWebsiteContext>(options => options.UseSqlServer(connectionString));
+//builder.Services.AddDbContext<EcommerceWebsiteContext>(options => options.UseSqlServer(connectionString));
+builder.Services.AddDbContext<EcommerceAPI_dbContext>(options => options.UseSqlServer(connectionString));
 //run in package manager console to get data tables
 //Scaffold-DbContext "Data Source=BTHL8LRV2D3;Initial Catalog=EcommerceWebsite;Integrated Security=True;TrustServerCertificate=True;" Microsoft.EntityFrameworkCore.SqlServer
+
+//For enabling migration/create migration use prefix --> EntityFrameworkCore\ --> ex) EntityFrameworkCore\update-database -context [CONTEXT]
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

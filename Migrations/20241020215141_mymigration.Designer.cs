@@ -4,16 +4,18 @@ using EcommerceAPI.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
 namespace EcommerceAPI.Migrations
 {
-    [DbContext(typeof(EcommerceWebsiteContext))]
-    partial class EcommerceWebsiteContextModelSnapshot : ModelSnapshot
+    [DbContext(typeof(EcommerceAPI_dbContext))]
+    [Migration("20241020215141_mymigration")]
+    partial class mymigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -66,10 +68,13 @@ namespace EcommerceAPI.Migrations
             modelBuilder.Entity("EcommerceAPI.Models.Order", b =>
                 {
                     b.Property<int>("OrderId")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("OrderId"), 1L, 1);
+
                     b.Property<decimal?>("Price")
-                        .HasColumnType("decimal(18,0)");
+                        .HasColumnType("decimal(18,2)");
 
                     b.HasKey("OrderId");
 

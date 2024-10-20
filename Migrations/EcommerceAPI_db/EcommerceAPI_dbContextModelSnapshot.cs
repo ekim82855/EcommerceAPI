@@ -8,10 +8,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace EcommerceAPI.Migrations
+namespace EcommerceAPI.Migrations.EcommerceAPI_db
 {
-    [DbContext(typeof(EcommerceWebsiteContext))]
-    partial class EcommerceWebsiteContextModelSnapshot : ModelSnapshot
+    [DbContext(typeof(EcommerceAPI_dbContext))]
+    partial class EcommerceAPI_dbContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
@@ -66,10 +66,13 @@ namespace EcommerceAPI.Migrations
             modelBuilder.Entity("EcommerceAPI.Models.Order", b =>
                 {
                     b.Property<int>("OrderId")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("OrderId"), 1L, 1);
+
                     b.Property<decimal?>("Price")
-                        .HasColumnType("decimal(18,0)");
+                        .HasColumnType("decimal(18,2)");
 
                     b.HasKey("OrderId");
 

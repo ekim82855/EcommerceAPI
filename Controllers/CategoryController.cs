@@ -13,9 +13,9 @@ namespace EcommerceAPI.Controllers
     [ApiController]
     public class CategoryController : ControllerBase
     {
-        private readonly EcommerceWebsiteContext _context;
+        private readonly EcommerceAPI_dbContext _context;
 
-        public CategoryController(EcommerceWebsiteContext context)
+        public CategoryController(EcommerceAPI_dbContext context)
         {
             _context = context;
         }

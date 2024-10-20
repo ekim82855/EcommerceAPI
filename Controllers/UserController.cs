@@ -13,9 +13,9 @@ namespace EcommerceAPI.Controllers
     [ApiController]
     public class UserController : ControllerBase
     {
-        private readonly EcommerceWebsiteContext _context;
+        private readonly EcommerceAPI_dbContext _context;
 
-        public UserController(EcommerceWebsiteContext context)
+        public UserController(EcommerceAPI_dbContext context)
         {
             _context = context;
         }

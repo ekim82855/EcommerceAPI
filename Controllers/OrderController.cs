@@ -13,9 +13,9 @@ namespace EcommerceAPI.Controllers
     [ApiController]
     public class OrderController : ControllerBase
     {
-        private readonly EcommerceWebsiteContext _context;
+        private readonly EcommerceAPI_dbContext _context;
 
-        public OrderController(EcommerceWebsiteContext context)
+        public OrderController(EcommerceAPI_dbContext context)
         {
             _context = context;
         }
