@@ -24,7 +24,7 @@ namespace EcommerceAPI.Models
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                optionsBuilder.UseSqlServer("Server=tcp:ecommerceapidbserver.database.windows.net,1433;Initial Catalog=EcommerceAPI_db;Persist Security Info=False;User ID=erickim;Password=Password1!;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
+                optionsBuilder.UseSqlServer("RP9l1vntZPKNJ4ny1zh4Tyc0MwH/R4mfbRTIGt5qYsXeyscYK9MZlkJQuubGC2ienL5E+XW03b/8u7bZ+3dHOXZmppWQHZFVF5w2M3M3jyWRChL48S6vwd0w0h11Wyk3cnv7wrNjNJwB4YaQ0mzJaY/6cmTREijPdqOvukuSaJcTmy9+JvzWfitMxnd7jbyY8DXC/tQrpESOU+Sgpi10k9rD6yqE9nk8uiFhpgPgLCk58qP1kLt2x69yYC8z9Depn4exQeEJQtBAoFDwue+lqosv9242x5ObJyiJBoZOespadjkqvDgfQ2SaTn0FPCtXbAZVoYMXklb5Y+RpHFPQgHq9mkaoYpai40m9Bls847EFhlE6GC5wFyO16bQk4P9AA0gxwZ+iTw5VEr2n3E29Ugt2xEU4DL/+iUH1FehX2rY=");
             }
         }
 

@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using EcommerceAPI.Models;
+using EcommerceAPI;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,6 +9,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+connectionString = StringCipher.SimpleDecryptWithPassword(connectionString, "password12345");
 //builder.Services.AddDbContext<EcommerceWebsiteContext>(options => options.UseSqlServer(connectionString));
 builder.Services.AddDbContext<EcommerceAPI_dbContext>(options => options.UseSqlServer(connectionString));
 //run in package manager console to get data tables
