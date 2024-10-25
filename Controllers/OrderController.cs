@@ -23,13 +23,13 @@ namespace EcommerceAPI.Controllers
         // GET: api/Order/GetAllOrders
         [Route("GetAllOrders")]
         [HttpGet]
-        public ActionResult<IEnumerable<Order>> GetOrder()
+        public async Task<ActionResult<IEnumerable<Order>>> GetOrder()
         {
             if (_context.Order == null)
             {
                 return NotFound();
             }
-            return _context.Order.ToList();
+            return await _context.Order.ToListAsync();
         }
 
         // GET: api/Order/5

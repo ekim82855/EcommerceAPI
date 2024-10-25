@@ -23,13 +23,13 @@ namespace EcommerceAPI.Controllers
         // GET: api/Category/GetAllCategories
         [Route("GetAllCategories")]
         [HttpGet]
-        public ActionResult<IEnumerable<Category>> GetCategory()
+        public async Task<ActionResult<IEnumerable<Category>>> GetCategory()
         {
           if (_context.Category == null)
           {
               return NotFound();
           }
-            return _context.Category.ToList();
+            return await _context.Category.ToListAsync();
         }
 
         // GET: api/Category/5
