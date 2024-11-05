@@ -86,10 +86,15 @@ namespace EcommerceAPI.Controllers
         [HttpPost]
         public ActionResult<User> PostUser(User user)
         {
-          if (_context.User == null)
-          {
-              return Problem("Entity set 'EcommerceWebsiteContext.User'  is null.");
-          }
+            user.UserID = 0;
+            if (_context.User == null)
+            {
+                return Problem("Entity set 'EcommerceWebsiteContext.User'  is null.");
+            }
+            if (_context.User.Any(u => u.UserName == user.UserName))
+            {
+                return Problem("The provided username already exists. Please try another one.");
+            }
             _context.User.Add(user);
             _context.SaveChanges();
 
