@@ -84,9 +84,8 @@ namespace EcommerceAPI.Controllers
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [Route("Register")]
         [HttpPost]
-        public ActionResult<User> PostUser(User user)
+        public async Task<ActionResult<User>> PostUser(User user)
         {
-            user.UserID = 0;
             if (_context.User == null)
             {
                 return Problem("Entity set 'EcommerceWebsiteContext.User'  is null.");
@@ -96,9 +95,22 @@ namespace EcommerceAPI.Controllers
                 return Problem("The provided username already exists. Please try another one.");
             }
             _context.User.Add(user);
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetUser", new { id = user.UserID }, user);
+        }
+
+        // POST: api/User/Login
+        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        [Route("Login")]
+        [HttpPost]
+        public async Task<ActionResult<bool>> Login(User user)
+        {
+            if (_context.User == null)
+            {
+                return NotFound();
+            }
+            return await _context.User.FirstOrDefaultAsync(x => x.UserName == user.UserName && x.Password == user.Password) != null;
         }
 
         // DELETE: api/User/5
